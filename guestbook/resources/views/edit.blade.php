@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{$title}}</title>
+    <title>Guest Book</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center">{{$pagetitle}}</h1>
+      <h1 class="text-center">Guest Book on Laravel 5</h1>
 
         @yield('content')
     </div>

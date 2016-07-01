@@ -1,20 +1,15 @@
-<form id="id-form_messages" method="post">
+{!! Form::open(['url' => 'add', 'method' => 'post']) !!}
   <div class="form-group">
-    <label for="name">Name: </label>
-    <input class="form-control" placeholder="Name" type="text" name="name" id="name">
+    {!! Form::label('name', 'Name: ') !!}
+    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
   </div>
-
   <div class="form-group">
-    <label for="email">E-mail: </label>
-    <input class="form-control" placeholder="E-mail" type="email" name="email" id="email">
+    {!! Form::label('email', 'E-mail: ') !!}
+    {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail']) !!}
   </div>
-
   <div class="form-group">
-    <label for="message">Message: </label>
-    <textarea class="form-control" rows="5" placeholder="Text Area" name="message" cols="50" id="message"></textarea>
+    {!! Form::label('message', 'Message: ') !!}
+    {!! Form::textarea('message', null, ['class' => 'form-control', 'placeholder' => 'Message']) !!}
   </div>
-
-  <div class="form-group">
-    <input class="btn btn-primary" type="submit" value="Add">
-  </div>
-</form>
+{!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+{!! Form::close() !!}

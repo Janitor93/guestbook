@@ -9,12 +9,8 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 */
 
-Route::get('/', ['uses' => 'HomeController@index']);
-Route::get('message/{id}/edit', ['uses' => 'HomeController@edit', 'as' => 'message.edit'])->where(['id' => '[0-9]+']);
+Route::get('/', 'HomeController@index');
+Route::post('add', 'HomeController@add');
+// Route::get('message/{id}/edit', ['uses' => 'HomeController@edit', 'as' => 'message.edit'])->where(['id' => '[0-9]+']);

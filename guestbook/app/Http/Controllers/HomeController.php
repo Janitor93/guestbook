@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Models\Message;
+use App\Message;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
 {
     public function index() {
-      $data = [
-        'title' => 'Guest Book on Laravel 5',
-        'pagetitle' => "Guset Book",
-        'messages' => Message::latest()->paginate(1),
-        'count' => Message::count()
-      ];
-      return view('pages.messages.index', $data);
+      $data = Message::paginate(5);
+      $count = Message::count();
+      return view('pages.messages.index', ['messages' => $data, 'count' => $count]);
+    }
+
+    public function add(Request $request) {
+      $input = Input::all();
+      Message::create($input);
+      return back();
     }
 
     public function edit($id) {

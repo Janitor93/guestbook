@@ -21,16 +21,7 @@
         </div>
 
         <div class="panel-body">
-          {{ $message->messages }}
-          <hr>
-          <div class="pull-right">
-            <a class="btn btn-info" href="#">
-              <i class="glyphicon glyphicon-pencil"></i>
-            </a>
-            <button class="btn btn-danger">
-              <i class="glyphicon glyphicon-trash"></i>
-            </button>
-          </div>
+          {{ $message->message }}
         </div>
       </div>
       @endforeach

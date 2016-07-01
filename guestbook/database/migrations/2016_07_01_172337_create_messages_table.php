@@ -16,7 +16,7 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->string('name')->index();
             $table->string('email')->nullable()->index();
-            $table->text('messages');
+            $table->text('message');
             $table->timestamps();
         });
     }
